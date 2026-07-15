@@ -21,15 +21,17 @@
     <link rel="apple-touch-icon" href="assets/7%20iso-TI-wh.png">
     <link rel="preload" href="assets/hero-transportes-integrados.png" as="image">
     <link rel="preload" href="assets/3%20logo-TI-wh.png" as="image">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260715-6">
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#inicio" aria-label="Transportes Integrados">
         <img src="assets/3%20logo-TI-wh.png" alt="Transportes Integrados">
+        <span class="brand-fallback" hidden>Transportes Integrados</span>
       </a>
       <nav class="nav" aria-label="Principal">
         <a href="#servicios">Servicios</a>
+        <a href="#pilotos-ejecutivos">Pilotos ejecutivos</a>
         <a href="#cobertura">Cobertura</a>
         <a href="#contacto">Contacto</a>
       </nav>
@@ -97,6 +99,133 @@
         </div>
       </section>
 
+      <section class="executive-service" id="pilotos-ejecutivos">
+        <div class="executive-intro">
+          <div class="executive-copy">
+            <p class="eyebrow">Movilidad ejecutiva a tu medida</p>
+            <h2>Vehículos de última generación, con o sin piloto.</h2>
+            <p>
+              Contrata el vehículo por el período que necesitas y decide si deseas incluir
+              un piloto ejecutivo. Atendemos traslados corporativos y personales con una
+              flota moderna, coordinación puntual y atención profesional.
+            </p>
+            <ul class="executive-benefits" aria-label="Beneficios del servicio">
+              <li>Pilotos profesionales</li>
+              <li>Vehículos recientes</li>
+              <li>Atención programada</li>
+            </ul>
+          </div>
+          <div class="executive-media">
+            <img
+              src="assets/pickup-piloto-ejecutivo.png"
+              alt="Pickup blanca de modelo reciente para el servicio de piloto ejecutivo"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="vehicle-showcase" aria-labelledby="vehicle-showcase-title">
+            <div class="vehicle-showcase-heading">
+              <span>Flota disponible</span>
+              <h3 id="vehicle-showcase-title">Elige el vehículo ideal para tu servicio</h3>
+            </div>
+            <img
+              src="assets/flota-ejecutiva-vehiculos.png"
+              alt="Sedán ejecutivo, SUV y pickup doble cabina disponibles para contratación"
+              loading="lazy"
+            >
+            <div class="vehicle-showcase-labels" aria-hidden="true">
+              <div>
+                <strong>Sedán ejecutivo</strong>
+                <span>Confort y presencia</span>
+              </div>
+              <div>
+                <strong>SUV</strong>
+                <span>Espacio y versatilidad</span>
+              </div>
+              <div>
+                <strong>Pickup doble cabina</strong>
+                <span>Capacidad y seguridad</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="executive-quote" id="executive-quote-form" novalidate>
+          <label class="quote-field quote-location">
+            <span class="quote-label">Localidad de recogida</span>
+            <select id="pickup-location" name="pickup-location" required>
+              <option value="Sucursal Ciudad de Guatemala">Sucursal Ciudad de Guatemala</option>
+            </select>
+          </label>
+
+          <div class="quote-field date-range-field" id="date-range-field">
+            <span class="quote-label">Fechas del servicio</span>
+            <button
+              class="date-range-trigger"
+              id="date-range-trigger"
+              type="button"
+              aria-haspopup="dialog"
+              aria-expanded="false"
+              aria-controls="date-range-calendar"
+            >
+              <span id="date-range-value">Seleccionar fechas</span>
+              <span class="field-chevron" aria-hidden="true"></span>
+            </button>
+            <input id="start-date" name="start-date" type="hidden">
+            <input id="end-date" name="end-date" type="hidden">
+            <span class="field-error" id="date-range-error" role="alert"></span>
+
+            <div
+              class="date-range-calendar"
+              id="date-range-calendar"
+              role="dialog"
+              aria-modal="false"
+              aria-label="Seleccionar rango de fechas"
+              hidden
+            >
+              <div class="calendar-header">
+                <button class="calendar-nav" id="previous-month" type="button" aria-label="Mes anterior">&larr;</button>
+                <strong id="calendar-month" aria-live="polite"></strong>
+                <button class="calendar-nav" id="next-month" type="button" aria-label="Mes siguiente">&rarr;</button>
+              </div>
+              <div class="calendar-weekdays" aria-hidden="true">
+                <span>Lu</span>
+                <span>Ma</span>
+                <span>Mi</span>
+                <span>Ju</span>
+                <span>Vi</span>
+                <span>Sá</span>
+                <span>Do</span>
+              </div>
+              <div class="calendar-days" id="calendar-days" role="grid"></div>
+              <p class="calendar-help" id="calendar-help">Selecciona la fecha de inicio y después la fecha final.</p>
+              <div class="calendar-actions">
+                <button class="calendar-clear" id="clear-dates" type="button">Limpiar fechas</button>
+                <button class="calendar-confirm" id="confirm-dates" type="button" disabled>Confirmar</button>
+              </div>
+            </div>
+          </div>
+
+          <label class="quote-field quote-time">
+            <span class="quote-label">Hora de recogida</span>
+            <input id="pickup-time" name="pickup-time" type="time" required>
+          </label>
+
+          <label class="quote-field quote-vehicle">
+            <span class="quote-label">Tipo de vehículo</span>
+            <select id="vehicle-type" name="vehicle-type" required>
+              <option value="" selected disabled>Seleccionar vehículo</option>
+              <option value="Pickup doble cabina">Pickup doble cabina</option>
+              <option value="SUV">SUV</option>
+              <option value="Sedán ejecutivo">Sedán ejecutivo</option>
+            </select>
+          </label>
+
+          <button class="quote-submit" type="submit">Cotizar</button>
+          <p class="quote-note">Al cotizar se abrirá tu aplicación de correo con los datos del servicio.</p>
+        </form>
+      </section>
+
       <section class="section split" id="cobertura">
         <div>
           <p class="eyebrow">Cobertura</p>
@@ -135,6 +264,6 @@
       <a href="#inicio">Volver arriba</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260715-6"></script>
   </body>
 </html>
