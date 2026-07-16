@@ -5,5 +5,8 @@ deployment:
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp styles.css $DEPLOYPATH
     - /bin/cp script.js $DEPLOYPATH
+    - /bin/cp site-chrome.js $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
+    - /bin/mkdir -p $DEPLOYPATH/movilidad-ejecutiva
+    - /bin/cp movilidad-ejecutiva/index.html $DEPLOYPATH/movilidad-ejecutiva/
