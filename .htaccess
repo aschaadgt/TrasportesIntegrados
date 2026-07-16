@@ -1,6 +1,11 @@
 DirectoryIndex index.html
 Options -Indexes
 
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^movilidad-ejecutiva\.html$ /movilidad-ejecutiva/ [R=301,L]
+</IfModule>
+
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
